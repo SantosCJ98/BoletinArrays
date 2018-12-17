@@ -11,7 +11,7 @@ public class Ej4 {
 		
 		System.out.println("Introduce la longitud del array:");
 		
-		int n = readInt();
+		int n = readRange(0, Equivalencias.MAYOR);
 		
 		System.out.println("¿Qué numero vas a buscar?");
 		
