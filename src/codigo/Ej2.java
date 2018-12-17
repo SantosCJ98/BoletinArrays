@@ -11,7 +11,7 @@ public class Ej2 {
 		
 		System.out.println("Introduce el número de parámetros:");
 		
-		int n = readInt();
+		int n = readRange(0, Equivalencias.MAYOR);
 		
 		String miarray [] = new String [n];
 		
