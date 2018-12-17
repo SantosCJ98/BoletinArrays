@@ -12,7 +12,7 @@ public class Ej1 {
 		
 		System.out.println("Introduce la longitud del array:");
 		
-		int n = readInt();
+		int n = readRange(0, Equivalencias.MAYOR);
 		
 		System.out.println("El resultado es: " + sumaarray(n));
 
