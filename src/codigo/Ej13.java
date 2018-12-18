@@ -18,16 +18,19 @@ public class Ej13 {
 			
 			dibujarcuadrado(miarray);
 			
-			if ((filassumanigual(miarray, n, n) == columnassumanigual(miarray, n, n)) == diagonalessumanigual(miarray)) {
+			if (escuadradomagico(miarray, n, n)) {
 				
-				System.out.println("Es un cuadrado mágico");
+				System.out.println("Es un cuadrado magico");
 				
 			}
 			
 			else {
 				
 				System.out.println("No es un cuadrado mágico");
+				
 			}
+			
+			
 			
 			
 			
@@ -161,5 +164,20 @@ public static boolean columnassumanigual (int [][] miarray, int filas, int colum
 		
 	
 }
+	
+	public static boolean escuadradomagico (int [][] miarray, int filas, int columnas) {
+		
+		if ((filassumanigual(miarray, filas, columnas) == columnassumanigual(miarray, filas, columnas)) == diagonalessumanigual(miarray)) {
+			
+			return true;
+			
+		}
+		
+		else {
+			
+			return false;
+		}
+		
+	}
 	
 }

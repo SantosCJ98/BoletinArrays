@@ -1,5 +1,7 @@
 package codigo;
 
+import java.util.Arrays;
+
 //Crear un array de tres dimensiones. Recorrer el array en busca del elemento más grande y mostrar su posición en el array.
 
 public class Ej7 {
@@ -9,11 +11,16 @@ public class Ej7 {
 		
 		 mayorelemento(miarray);
 		 
+		 System.out.printf("El mayor elemento es %.2f " , mayorelemento(miarray));
+		 
+		 System.out.println();
+		 
+		 mostrararray(posiciones(miarray));
 	}
 	
 
 	
-	public static void mayorelemento (double [][][] miarray) {
+	public static double mayorelemento (double [][][] miarray) {
 		
 		double maximo = miarray[0][0][0];
 		
@@ -43,10 +50,82 @@ public class Ej7 {
 			
 		}
 		
-		System.out.printf("El valor máximo es %.2f (%d, %d, %d)", maximo, pos1, pos2, pos3);
+		return maximo;
 	
 	}
+	
+public static int [] posiciones (double [][][] miarray) {
+	
+	double maximo = miarray[0][0][0];
+	
+		int [] posiciones = new int [3];
+		
+		for (int i = 0; i < miarray.length; i++) {
+			
+			for (int j = 0; j < miarray[i].length; j++) {
+				
+				for (int k = 0; k < miarray[i][j].length; k++) {
+					
+					if (maximo < miarray[i][j][k]) {
+						
+						maximo = miarray[i][j][k];
+						
+						posiciones[0] = i;
+						
+						posiciones[1] = j;
+						
+						posiciones[2] = k;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		return posiciones;
+	
+	}
+
+
+
+
+
+public static void mostrararray (int [] miarray) {
+	
+	for (int i = 0; i < miarray.length; i++) {
+				
+				System.out.print(miarray[i] + "  ");
+			}
+	
+
+
+
 	
 	
 	
 }
+
+public static boolean comprobarposicion (int [] miarray, int [] miarray2) {
+	
+	if (Arrays.equals(miarray, miarray2)) {
+		
+		return true;
+		
+	}
+	
+	else {
+		
+		return false;
+		
+	}
+	
+	
+	
+	
+}
+
+}
+
+

@@ -2,6 +2,8 @@ package codigo;
 
 import static teclado.Teclado.*;
 
+import java.util.Arrays;
+
 //Pedir las filas y columnas por teclado. Rellenar el array con números. Si el número del indice actual es mayor que el siguiente, cambiarlos de sitio, hasta que el array este ordenado de menor a mayor.
 
 public class Ej12 {
@@ -56,7 +58,7 @@ public static void mostrararray (int [] miarray) {
 		
 	}
 
-public static void burbuja (int [] miarray) {
+public static int [] burbuja (int [] miarray) {
 	
 	for (int i = 0; i < miarray.length - 1; i++) {
 			
@@ -76,7 +78,25 @@ public static void burbuja (int [] miarray) {
 			}
 			
 		}
+	
+	return miarray;
 		
 	}
+
+public static boolean comprobarburbuja (int [] desordenado, int [] ordenado) {
+	
+	if (Arrays.equals(ordenado, burbuja(desordenado))) {
+		
+		return true;
+		
+	}
+	
+	else {
+		
+		return false;
+		
+	}
+	
+}
 	
 }

@@ -12,29 +12,41 @@ public class Ej1 {
 		
 		System.out.println("Introduce la longitud del array:");
 		
-		int n = readRange(0, Equivalencias.MAYOR);
-		
-		System.out.println("El resultado es: " + sumaarray(n));
-
-	}
-	
-	public static int sumaarray (int n) {
-		
-		int suma = 0;
+		int n = readEqui(0, Equivalencias.MAYOR);
 		
 		int miarray [] = new int [n];
 		
+		rellenararray(miarray);
+		
+		System.out.println("El resultado es: " + sumaarray(miarray));
+
+	}
+	
+	public static int sumaarray (int [] miarray) {
+		
+		int suma = 0;
+		
 		for (int i = 0; i < miarray.length; i++) {
-			
-			System.out.println("Introduce el " + (i + 1) + "º número:");
-			
-			miarray[i] = readInt();
 			
 			suma += miarray[i];
 			
 		}
 		
 		return suma;
+		
+	}
+	
+public static int [] rellenararray (int [] miarray) {
+		
+		for (int i = 0; i < miarray.length; i++) {
+			
+			System.out.println("Introduce el valor " + (i+1));
+			
+			miarray[i] = readInt();
+			
+		}
+		
+		return miarray;
 		
 	}
 

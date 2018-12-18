@@ -2,72 +2,81 @@ package codigo;
 
 import static teclado.Teclado.*;
 
-//Crear un array de numeros. Pedir la longitud del array, y un numero para contar las veces que aparece. Informar al usuario
-//en que indices aparece.
+import java.util.Arrays;
+
+//Crear un array de caracteres, dejando un indice vacío. Pedir al usuario en que posición quiere insertar ese último caracter.
+//Si lo inserta en un indice que ya tiene un caracter, desplazar los demas caracteres de manera que pueda ser colocado y noç
+//reemplazar ninguno.
 
 public class Ej4 {
 
 	public static void main(String[] args) {
+			
+		char miarray [] = {'a', 'b', 'c', 'd', ' '};
 		
-		System.out.println("Introduce la longitud del array:");
+		mostrararray(miarray);
 		
-		int n = readRange(0, Equivalencias.MAYOR);
+		System.out.println();
 		
-		System.out.println("¿Qué numero vas a buscar?");
+		System.out.println("Introduce el caracter");
 		
-		int buscar = readInt();
+		char c = readChar();
 		
-		int miarray [] = new int [n];
+		System.out.println("Elige posicion");
 		
-		buscararray(n, miarray, buscar);
+		int n = readRange(1, 5, Rangos.AMBOSIN);
+		
+		mostrararray(asignarposicion(n, miarray, c));
 		
 	}
 	
+	public static void mostrararray (char [] miarray) {
+		
+	for (int i = 0; i < miarray.length; i++) {
+			
+			System.out.print(miarray[i] + " ");
+		
+	}
 	
+	}
+	
+	public static char [] asignarposicion (int n, char [] miarray, char c) {
 		
-		public static void buscararray (int n, int [] miarray, int buscar) {
+		for (int i = miarray.length-1; i >= 0; i--) {
 			
-			String posiciones="";
+			if (i >= n) {
 			
-			int contador = 0;
+			miarray[i] = miarray[i-1];
 			
-			for (int i = 0; i < miarray.length; i++) {
+			}
+			
+			else if (i == n - 1) {
 				
-				System.out.println("Introduce el " + (i + 1) + "º número:");
-				
-				miarray[i] = readInt();
-				
-				if (miarray[i] == buscar) {
-					
-					contador++;
-					
-					posiciones = posiciones.concat(String.valueOf(i) + " ");
-					
-				}
+				miarray[i] = c;
 				
 			}
 			
-			array(miarray);
+		}
+		
+		return miarray;
+		
+		
+	}
+	
+	public static boolean comprobarresultado (int n, char [] miarray, char c) {
+		
+		if (Arrays.equals(miarray, asignarposicion(n, miarray, c))) {
 			
-			System.out.println("El número " + buscar + " aparece " + contador + " veces");
-			
-			System.out.println("Las posiciones que contienen el valor " + buscar + " son: " + posiciones);
+			return true;
 			
 		}
 		
-		public static void array (int miarray[]) {
+		else {
 			
-			System.out.print("El array resultante es: ");
-			
-			for (int i = 0; i < miarray.length; i++) {
-				
-				System.out.print(miarray[i] + " ");
-				
-				
-			}
-			
-			System.out.println();
+			return false;
 			
 		}
-
-}
+		
+	}
+		
+	}

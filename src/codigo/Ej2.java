@@ -11,18 +11,19 @@ public class Ej2 {
 		
 		System.out.println("Introduce el número de parámetros:");
 		
-		int n = readRange(0, Equivalencias.MAYOR);
+		int n = readEqui(0, Equivalencias.MAYOR);
 		
 		String miarray [] = new String [n];
 		
 		introducirarray(miarray);
 		
-		array(miarray);
+		System.out.println("El array introducido es: ");
 		
-		arrayinvertido(miarray);
+		mostrararray(miarray);
 		
+		System.out.println("El array invertido es: ");
 		
-		
+		mostrararray(arrayinvertido(miarray));
 		
 		
 	
@@ -30,7 +31,7 @@ public class Ej2 {
 
 	}
 	
-	public static void introducirarray (String miarray []) {
+	public static String [] introducirarray (String miarray []) {
 		
 		for (int i = 0; i < miarray.length; i++) {
 			
@@ -40,11 +41,11 @@ public class Ej2 {
 			
 		}
 		
+		return miarray;
+		
 	}
 	
-	public static void array (String miarray[]) {
-		
-		System.out.print("El array resultante es: ");
+	public static void mostrararray (String miarray[]) {
 		
 		for (int i = 0; i < miarray.length; i++) {
 			
@@ -59,18 +60,40 @@ public class Ej2 {
 	
 
 
-	public static void arrayinvertido (String miarray[]) {
+	public static String [] arrayinvertido (String miarray[]) {
 		
-	System.out.print("El array invertido es: ");
+		for (int i = 0; i < miarray.length/2; i++) {
+			
+			String aux = miarray[i];
+			
+			miarray[i] = miarray[miarray.length -i - 1];
+			
+			miarray[miarray.length - i - 1] = aux;
+					
+			
+		}
 		
-		for (int i = miarray.length-1; i >= 0; i--) {
+		return miarray;
+		
+	}
+	
+	
+	public static boolean comprobarinvertido (String [] original, String [] invertido) {
+	
+
+	for (int i = 0, j = invertido.length-1; i < original.length && j >= 0; i++, j--) {
+		
+		if (original[i] != invertido[j]) {
 			
-			System.out.print(miarray[i] + " ");
-			
+			return false;
 			
 		}
 		
 	}
+	
+	return true;
+	
+}
 	
 }
 		

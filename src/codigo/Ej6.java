@@ -88,7 +88,7 @@ public class Ej6 {
 			
 			for (int i = 0; i < numfilas; i++) {
 				
-				sumacols += miarray[j][i];
+				sumacols += miarray[i][j];
 				
 			}
 			
