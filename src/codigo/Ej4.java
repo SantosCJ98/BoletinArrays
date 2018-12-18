@@ -63,9 +63,9 @@ public class Ej4 {
 		
 	}
 	
-	public static boolean comprobarresultado (int n, char [] miarray, char c) {
+	public static boolean comprobarresultado (int n, char [] miarray, char [] movido, char c) {
 		
-		if (Arrays.equals(miarray, asignarposicion(n, miarray, c))) {
+		if (Arrays.equals(movido, asignarposicion(n, miarray, c))) {
 			
 			return true;
 			

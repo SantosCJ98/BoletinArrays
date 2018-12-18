@@ -13,15 +13,14 @@ class Ej4_test {
 	
 		char [] array = {'a','b','c','d',' '};
 		
-		assertTrue(comprobarresultado(1, array, '*'));
+		char [] movido = {'a','b','*','c','d'};
 		
-		assertTrue(comprobarresultado(2, array, '*'));
+		assertTrue(comprobarresultado(3, array, movido, '*'));
 		
-		assertTrue(comprobarresultado(3, array, '*'));
+		assertFalse(comprobarresultado(1, array, movido, '*'));
 		
-		assertTrue(comprobarresultado(4, array, '*'));
 		
-		assertTrue(comprobarresultado(5, array, '*'));
+	
 	
 	}
 
