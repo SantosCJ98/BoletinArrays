@@ -11,72 +11,71 @@ import java.util.Arrays;
 public class Ej4 {
 
 	public static void main(String[] args) {
-			
-		char miarray [] = {'a', 'b', 'c', 'd', ' '};
-		
+
+		char miarray[] = { 'a', 'b', 'c', 'd', ' ' };
+
 		mostrararray(miarray);
-		
+
 		System.out.println();
-		
+
 		System.out.println("Introduce el caracter");
-		
+
 		char c = readChar();
-		
+
 		System.out.println("Elige posicion");
-		
+
 		int n = readRange(1, 5, Rangos.AMBOSIN);
-		
+
 		mostrararray(asignarposicion(n, miarray, c));
-		
+
 	}
-	
-	public static void mostrararray (char [] miarray) {
-		
-	for (int i = 0; i < miarray.length; i++) {
-			
+
+	public static void mostrararray(char[] miarray) {
+
+		for (int i = 0; i < miarray.length; i++) {
+
 			System.out.print(miarray[i] + " ");
-		
+
+		}
+
 	}
-	
-	}
-	
-	public static char [] asignarposicion (int n, char [] miarray, char c) {
-		
-		for (int i = miarray.length-1; i >= 0; i--) {
-			
+
+	public static char[] asignarposicion(int n, char[] miarray, char c) {
+
+		for (int i = miarray.length - 1; i >= 0; i--) {
+
 			if (i >= n) {
-			
-			miarray[i] = miarray[i-1];
-			
+
+				miarray[i] = miarray[i - 1];
+
 			}
-			
+
 			else if (i == n - 1) {
-				
+
 				miarray[i] = c;
-				
+
 			}
-			
+
 		}
-		
+
 		return miarray;
-		
-		
+
 	}
-	
-	public static boolean comprobarresultado (int n, char [] miarray, char [] movido, char c) {
-		
+
+	public static boolean comprobarresultado(int n, char[] miarray, char[] movido, char c) {
+
 		if (Arrays.equals(movido, asignarposicion(n, miarray, c))) {
-			
+
 			return true;
-			
+
 		}
-		
+
 		else {
-			
+
 			return false;
-			
+
 		}
-		
+
 	}
-		
-	}
+
+}

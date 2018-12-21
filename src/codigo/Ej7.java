@@ -7,125 +7,109 @@ import java.util.Arrays;
 public class Ej7 {
 
 	public static void main(String[] args) {
-		double miarray [][][] = { { {1,4,2}, {9,2,3}, {3,2,1}, {2,10,3}}, {{9,2,1}, {1,2,9}, {50,30,12}, {0, 0, 0} }};
-		
-		 mayorelemento(miarray);
-		 
-		 System.out.printf("El mayor elemento es %.2f " , mayorelemento(miarray));
-		 
-		 System.out.println();
-		 
-		 mostrararray(posiciones(miarray));
-	}
-	
+		double miarray[][][] = { { { 1, 4, 2 }, { 9, 2, 3 }, { 3, 2, 1 }, { 2, 10, 3 } },
+				{ { 9, 2, 1 }, { 1, 2, 9 }, { 50, 30, 12 }, { 0, 0, 0 } } };
 
-	
-	public static double mayorelemento (double [][][] miarray) {
-		
+		mayorelemento(miarray);
+
+		System.out.printf("El mayor elemento es %.2f ", mayorelemento(miarray));
+
+		System.out.println();
+
+		mostrararray(posiciones(miarray));
+	}
+
+	public static double mayorelemento(double[][][] miarray) {
+
 		double maximo = miarray[0][0][0];
-		
+
 		int pos1 = 0, pos2 = 0, pos3 = 0;
-		
+
 		for (int i = 0; i < miarray.length; i++) {
-			
+
 			for (int j = 0; j < miarray[i].length; j++) {
-				
+
 				for (int k = 0; k < miarray[i][j].length; k++) {
-					
+
 					if (maximo < miarray[i][j][k]) {
-						
+
 						maximo = miarray[i][j][k];
-						
+
 						pos1 = i;
-						
+
 						pos2 = j;
-						
+
 						pos3 = k;
-						
+
 					}
-					
+
 				}
-				
+
 			}
-			
+
 		}
-		
+
 		return maximo;
-	
+
 	}
-	
-public static int [] posiciones (double [][][] miarray) {
-	
-	double maximo = miarray[0][0][0];
-	
-		int [] posiciones = new int [3];
-		
+
+	public static int[] posiciones(double[][][] miarray) {
+
+		double maximo = miarray[0][0][0];
+
+		int[] posiciones = new int[3];
+
 		for (int i = 0; i < miarray.length; i++) {
-			
+
 			for (int j = 0; j < miarray[i].length; j++) {
-				
+
 				for (int k = 0; k < miarray[i][j].length; k++) {
-					
+
 					if (maximo < miarray[i][j][k]) {
-						
+
 						maximo = miarray[i][j][k];
-						
+
 						posiciones[0] = i;
-						
+
 						posiciones[1] = j;
-						
+
 						posiciones[2] = k;
-						
+
 					}
-					
+
 				}
-				
+
 			}
-			
+
 		}
-		
+
 		return posiciones;
-	
+
 	}
 
+	public static void mostrararray(int[] miarray) {
 
+		for (int i = 0; i < miarray.length; i++) {
 
+			System.out.print(miarray[i] + "  ");
+		}
 
-
-public static void mostrararray (int [] miarray) {
-	
-	for (int i = 0; i < miarray.length; i++) {
-				
-				System.out.print(miarray[i] + "  ");
-			}
-	
-
-
-
-	
-	
-	
-}
-
-public static boolean comprobarposicion (int [] miarray, int [] miarray2) {
-	
-	if (Arrays.equals(miarray, miarray2)) {
-		
-		return true;
-		
 	}
-	
-	else {
-		
-		return false;
-		
+
+	public static boolean comprobarposicion(int[] miarray, int[] miarray2) {
+
+		if (Arrays.equals(miarray, miarray2)) {
+
+			return true;
+
+		}
+
+		else {
+
+			return false;
+
+		}
+
 	}
-	
-	
-	
-	
-}
 
 }
-
-

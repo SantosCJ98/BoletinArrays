@@ -9,94 +9,91 @@ import java.util.Arrays;
 public class Ej12 {
 
 	public static void main(String[] args) {
-	
+
 		System.out.println("Introduce el numero de valores:");
-		
+
 		int n = readEqui(0, Equivalencias.MAYOR);
-		
-		int [] miarray = new int [n];
-		
+
+		int[] miarray = new int[n];
+
 		rellenararray(miarray);
-		
+
 		System.out.println();
-		
+
 		System.out.println("Array original:");
-		
+
 		mostrararray(miarray);
-		
+
 		burbuja(miarray);
-		
+
 		System.out.println();
-		
+
 		System.out.println("Array ordenado:");
-		
+
 		mostrararray(miarray);
-		
+
 	}
-		
-		public static void rellenararray (int [] miarray) {
-			
-			for (int i = 0; i < miarray.length; i++) {
-					
-					System.out.print("Valor nº " + (i+1) +": ");
-					
-					miarray[i] = readInt();
-					
-				}
-				
-			}
 
-	
+	public static void rellenararray(int[] miarray) {
 
-public static void mostrararray (int [] miarray) {
-	
-	for (int i = 0; i < miarray.length; i++) {
-			
+		for (int i = 0; i < miarray.length; i++) {
+
+			System.out.print("Valor nº " + (i + 1) + ": ");
+
+			miarray[i] = readInt();
+
+		}
+
+	}
+
+	public static void mostrararray(int[] miarray) {
+
+		for (int i = 0; i < miarray.length; i++) {
+
 			System.out.print(miarray[i] + "   ");
-			
+
 		}
-		
+
 	}
 
-public static int [] burbuja (int [] miarray) {
-	
-	for (int i = 0; i < miarray.length - 1; i++) {
-			
+	public static int[] burbuja(int[] miarray) {
+
+		for (int i = 0; i < miarray.length - 1; i++) {
+
 			for (int j = i + 1; j < miarray.length; j++) {
-				
+
 				if (miarray[j] < miarray[i]) {
-					
+
 					int aux = miarray[j];
-					
+
 					miarray[j] = miarray[i];
-					
+
 					miarray[i] = aux;
-					
-				
+
 				}
-				
+
 			}
-			
+
 		}
-	
-	return miarray;
-		
+
+		return miarray;
+
 	}
 
-public static boolean comprobarburbuja (int [] desordenado, int [] ordenado) {
-	
-	if (Arrays.equals(ordenado, burbuja(desordenado))) {
-		
-		return true;
-		
+	public static boolean comprobarburbuja(int[] desordenado, int[] ordenado) {
+
+		if (Arrays.equals(ordenado, burbuja(desordenado))) {
+
+			return true;
+
+		}
+
+		else {
+
+			return false;
+
+		}
+
 	}
-	
-	else {
-		
-		return false;
-		
-	}
-	
-}
-	
+
 }
