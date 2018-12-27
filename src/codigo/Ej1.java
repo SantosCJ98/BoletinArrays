@@ -10,17 +10,27 @@ public class Ej1 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array
+
 		System.out.println("Introduce la longitud del array:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		int miarray[] = new int[n];
 
+		// Rellenar array
+
 		rellenararray(miarray);
+
+		// Mostrar resultado
 
 		System.out.println("El resultado es: " + sumaarray(miarray));
 
 	}
+
+	// Función que suma los valores del array
 
 	public static int sumaarray(int[] miarray) {
 
@@ -35,6 +45,8 @@ public class Ej1 {
 		return suma;
 
 	}
+
+	// Funcion que rellena el array
 
 	public static int[] rellenararray(int[] miarray) {
 

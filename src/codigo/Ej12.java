@@ -10,11 +10,17 @@ public class Ej12 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array (debe ser mayor a 0)
+
 		System.out.println("Introduce el numero de valores:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		int[] miarray = new int[n];
+
+		// Rellenar array
 
 		rellenararray(miarray);
 
@@ -22,17 +28,25 @@ public class Ej12 {
 
 		System.out.println("Array original:");
 
+		// Mostrar array
+
 		mostrararray(miarray);
+
+		// Ordenar array
 
 		burbuja(miarray);
 
 		System.out.println();
+
+		// Mostrar array ordenado
 
 		System.out.println("Array ordenado:");
 
 		mostrararray(miarray);
 
 	}
+
+	// Funcion que rellena el array
 
 	public static void rellenararray(int[] miarray) {
 
@@ -46,6 +60,8 @@ public class Ej12 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void mostrararray(int[] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -55,6 +71,8 @@ public class Ej12 {
 		}
 
 	}
+
+	// Función que ordena el array
 
 	public static int[] burbuja(int[] miarray) {
 
@@ -79,6 +97,8 @@ public class Ej12 {
 		return miarray;
 
 	}
+
+	// Funcion que comprueba si el array esta ordenado
 
 	public static boolean comprobarburbuja(int[] desordenado, int[] ordenado) {
 

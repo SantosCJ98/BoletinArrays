@@ -9,13 +9,21 @@ public class Ej2 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array (debe ser mayor a 0)
+
 		System.out.println("Introduce el número de parámetros:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		String miarray[] = new String[n];
 
+		// Rellenar array
+
 		introducirarray(miarray);
+
+		// Mostrar array y su inverso
 
 		System.out.println("El array introducido es: ");
 
@@ -26,6 +34,8 @@ public class Ej2 {
 		mostrararray(arrayinvertido(miarray));
 
 	}
+
+	// Funcion que rellena el array
 
 	public static String[] introducirarray(String miarray[]) {
 
@@ -41,6 +51,8 @@ public class Ej2 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void mostrararray(String miarray[]) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -52,6 +64,8 @@ public class Ej2 {
 		System.out.println();
 
 	}
+
+	// Funcion que invierte el array
 
 	public static String[] arrayinvertido(String miarray[]) {
 
@@ -68,6 +82,8 @@ public class Ej2 {
 		return miarray;
 
 	}
+
+	// Funcion que comprueba si un array es el inverso de otro
 
 	public static boolean comprobarinvertido(String[] original, String[] invertido) {
 

@@ -9,15 +9,25 @@ public class Ej9 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array (debe ser mayor a 0)
+
 		System.out.println("Introduce el numero de filas y columnas del cuadrado:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		int[][] miarray = new int[n][n];
+
+		// Rellenar array
 
 		rellenararray(miarray);
 
+		// Mostrar array
+
 		dibujarcuadrado(miarray);
+
+		// Comprobar si es simétrico
 
 		if (arraysimetrico(miarray)) {
 
@@ -32,6 +42,8 @@ public class Ej9 {
 		}
 
 	}
+
+	// Funcion que rellena el array
 
 	public static void rellenararray(int[][] miarray) {
 
@@ -49,6 +61,8 @@ public class Ej9 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void dibujarcuadrado(int[][] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -64,6 +78,8 @@ public class Ej9 {
 		}
 
 	}
+
+	// Función que comprueba si el array es simétrico
 
 	public static boolean arraysimetrico(int[][] miarray) {
 

@@ -14,15 +14,25 @@ public class Ej14 {
 
 		do {
 
+			// Pedir longitud del array (debe ser mayor a 0)
+
 			System.out.println("Introduce el área del cuadrado (número de filas y columnas):");
 
 			int n = readEqui(0, Equivalencias.MAYOR);
 
+			// Declarar array
+
 			int[][] miarray = new int[n][n];
+
+			// Rellenar array
 
 			rellenararray(miarray);
 
+			// Mostrar array
+
 			dibujarcuadrado(miarray);
+
+			// Comprobar si hay filas, columnas, y diagonales capicuas.
 
 			for (int i = 0; i < miarray.length; i++) {
 
@@ -56,11 +66,15 @@ public class Ej14 {
 
 			}
 
+			// Preguntar si el usuario quiere salir o hacer otra prueba.
+
 			salir = readBoolean("¿Quieres salir del programa?");
 
 		} while (salir == false);
 
 	}
+
+	// Funcion que rellena el array
 
 	public static void rellenararray(int[][] miarray) {
 
@@ -77,6 +91,8 @@ public class Ej14 {
 		}
 	}
 
+	// Funcion que muestra el array
+
 	public static void dibujarcuadrado(int[][] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -92,6 +108,8 @@ public class Ej14 {
 		}
 
 	}
+
+	// Funcion que comprueba si una columna es capicua.
 
 	public static boolean escolumnacapicua(int[][] miarray, int columna) {
 
@@ -122,6 +140,8 @@ public class Ej14 {
 
 	}
 
+	// Funcion que comprueba si una fila es capicua
+
 	public static boolean esfilacapicua(int[][] miarray, int fila) {
 
 		boolean capicua = true;
@@ -151,6 +171,8 @@ public class Ej14 {
 
 	}
 
+	// Funcion que comprueba si la diagonal principal es capicua
+
 	public static boolean esdiagonalprincipalcapicua(int[][] miarray) {
 
 		boolean capicua = true;
@@ -179,7 +201,9 @@ public class Ej14 {
 		return capicua;
 
 	}
-
+	
+	// Funcion que comprueba si la diagonal secundaria es capicua
+	
 	public static boolean esdiagonalsecundariacapicua(int[][] miarray) {
 
 		boolean capicua = true;

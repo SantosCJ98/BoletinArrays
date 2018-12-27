@@ -9,6 +9,8 @@ public class Ej6 {
 
 	public static void main(String[] args) {
 
+		// Pedir filas y columnas del array al usuario.
+
 		System.out.println("¿Cuantas filas tiene el array?");
 
 		int numfilas = readInt();
@@ -17,17 +19,29 @@ public class Ej6 {
 
 		int numcols = readInt();
 
+		// Declarar array
+
 		int miarray[][] = new int[numfilas][numcols];
+
+		// Rellenar array
 
 		generararray(miarray, numfilas, numcols);
 
+		// Mostrar array
+
 		mostrararray(miarray, numfilas, numcols);
 
+		// Sumar cada fila.
+
 		sumarfilas(miarray, numfilas, numcols);
+
+		// Sumar cada columna
 
 		sumarcols(miarray, numfilas, numcols);
 
 	}
+
+	// Funcion que rellena el array
 
 	public static void generararray(int[][] miarray, int numfilas, int numcols) {
 
@@ -45,6 +59,8 @@ public class Ej6 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void mostrararray(int[][] miarray, int numfilas, int numcols) {
 
 		for (int i = 0; i < numfilas; i++) {
@@ -60,6 +76,8 @@ public class Ej6 {
 		}
 
 	}
+
+	// Funcion que suma cada fila del array
 
 	public static void sumarfilas(int[][] miarray, int numfilas, int numcols) {
 
@@ -78,6 +96,8 @@ public class Ej6 {
 		}
 
 	}
+
+	// Funcion que suma cada columna del array
 
 	public static void sumarcols(int[][] miarray, int numfilas, int numcols) {
 

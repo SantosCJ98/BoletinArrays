@@ -7,8 +7,13 @@ import java.util.Arrays;
 public class Ej7 {
 
 	public static void main(String[] args) {
+
+		// Declarar e iniciar array.
+
 		double miarray[][][] = { { { 1, 4, 2 }, { 9, 2, 3 }, { 3, 2, 1 }, { 2, 10, 3 } },
 				{ { 9, 2, 1 }, { 1, 2, 9 }, { 50, 30, 12 }, { 0, 0, 0 } } };
+
+		// Determinar y mostrar mayor elemento.
 
 		mayorelemento(miarray);
 
@@ -16,8 +21,12 @@ public class Ej7 {
 
 		System.out.println();
 
+		// Mostrar posicion en la que se encuentra el mayor elemento.
+
 		mostrararray(posiciones(miarray));
 	}
+
+	// Función que determina el mayor elemento del array
 
 	public static double mayorelemento(double[][][] miarray) {
 
@@ -53,6 +62,8 @@ public class Ej7 {
 
 	}
 
+	// Funcion que busca la posicion del mayor elemento del array
+
 	public static int[] posiciones(double[][][] miarray) {
 
 		double maximo = miarray[0][0][0];
@@ -87,6 +98,8 @@ public class Ej7 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void mostrararray(int[] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -95,6 +108,8 @@ public class Ej7 {
 		}
 
 	}
+
+	// Funcion que comprueba las posiciones.
 
 	public static boolean comprobarposicion(int[] miarray, int[] miarray2) {
 

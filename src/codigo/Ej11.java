@@ -8,15 +8,25 @@ public class Ej11 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array (debe ser mayor a 0)
+
 		System.out.println("Introduce el numero de filas y columnas del cuadrado:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		int[][] miarray = new int[n][n];
+
+		// Rellenar array
 
 		rellenararray(miarray);
 
+		// Mostrar array
+
 		dibujarcuadrado(miarray);
+
+		// Comprobar si hay alguna fila igual a alguna columna y decir cuales.
 
 		for (int i = 0; i < miarray.length; i++) {
 
@@ -34,6 +44,8 @@ public class Ej11 {
 
 	}
 
+	// Funcion que rellena el array
+
 	public static void rellenararray(int[][] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -50,6 +62,8 @@ public class Ej11 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void dibujarcuadrado(int[][] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -65,6 +79,8 @@ public class Ej11 {
 		}
 
 	}
+
+	// Función que comprueba si alguna fila es igual a alguna columna
 
 	public static boolean comprobarfilacolumnaigual(int[][] miarray, int fila, int columna) {
 

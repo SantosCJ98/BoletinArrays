@@ -8,15 +8,26 @@ public class Ej13 {
 
 	public static void main(String[] args) {
 
+		// Pedir longitud del array (debe ser mayor a 0)
+
 		System.out.println("Introduce el numero de filas y columnas del cuadrado:");
 
 		int n = readEqui(0, Equivalencias.MAYOR);
 
+		// Declarar array
+
 		int[][] miarray = new int[n][n];
+
+		// Rellenar array
 
 		rellenararray(miarray);
 
+		// Mostrar array
+
 		dibujarcuadrado(miarray);
+
+		// Comprobar si todas las filas, columnas y diagonales suman lo mismo por
+		// separado
 
 		if (escuadradomagico(miarray, n, n)) {
 
@@ -31,6 +42,8 @@ public class Ej13 {
 		}
 
 	}
+
+	// Funcion que rellena el array
 
 	public static void rellenararray(int[][] miarray) {
 
@@ -48,6 +61,8 @@ public class Ej13 {
 
 	}
 
+	// Funcion que muestra el array
+
 	public static void dibujarcuadrado(int[][] miarray) {
 
 		for (int i = 0; i < miarray.length; i++) {
@@ -64,6 +79,8 @@ public class Ej13 {
 
 	}
 
+	// Funcion para crear la suma de referencia
+
 	public static int resultadosuma(int[][] miarray) {
 
 		int suma = 0;
@@ -77,6 +94,8 @@ public class Ej13 {
 		return suma;
 
 	}
+
+	// Funcion que comprueba si todas las filas suman lo mismo.
 
 	public static boolean filassumanigual(int[][] miarray, int filas, int columnas) {
 
@@ -102,6 +121,8 @@ public class Ej13 {
 
 	}
 
+	// Funcion que comprueba si todas las columnas suman lo mismo.
+
 	public static boolean columnassumanigual(int[][] miarray, int filas, int columnas) {
 
 		for (int j = 0; j < columnas; j++) {
@@ -125,6 +146,8 @@ public class Ej13 {
 		return true;
 
 	}
+
+	// Funcion que comprueba si las diagonales suman lo mismo.
 
 	public static boolean diagonalessumanigual(int[][] miarray) {
 
@@ -157,6 +180,8 @@ public class Ej13 {
 		}
 
 	}
+
+	// Funcion que comprueba si el array es un cuadrado magico
 
 	public static boolean escuadradomagico(int[][] miarray, int filas, int columnas) {
 
