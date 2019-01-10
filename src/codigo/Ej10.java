@@ -65,92 +65,49 @@ public class Ej10 {
 	// Función que dibuja el histograma
 
 	public static void histograma(int[] miarray) {
-
-		int cont0 = 0;
-
-		int cont1 = 0;
-
-		int cont2 = 0;
-
-		int cont3 = 0;
-
-		int cont4 = 0;
-
-		int cont5 = 0;
-
-		int cont6 = 0;
-
-		int cont7 = 0;
-
-		int cont8 = 0;
-
-		int cont9 = 0;
+		
+		int [] contadores = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 		for (int i = 0; i < miarray.length; i++) {
 
-			if (miarray[i] == 0) {
-
-				cont0++;
-
+			switch (miarray[i]) {
+			
+			case 0: contadores[0]++;
+			break;
+			
+			case 1: contadores[1]++;
+			break;
+			
+			case 2: contadores[2]++;
+			break;
+			
+			case 3: contadores[3]++;
+			break;
+			
+			case 4: contadores[4]++;
+			break;
+			
+			case 5: contadores[5]++;
+			break;
+			
+			case 6: contadores[6]++;
+			break;
+			
+			case 7: contadores[7]++;
+			break;
+			
+			case 8: contadores[8]++;
+			break;
+			
+			case 9: contadores[9]++;
+			break;
+			
 			}
 
-			else if (miarray[i] == 1) {
-
-				cont1++;
-
-			}
-
-			else if (miarray[i] == 2) {
-
-				cont2++;
-
-			}
-
-			else if (miarray[i] == 3) {
-
-				cont3++;
-
-			}
-
-			else if (miarray[i] == 4) {
-
-				cont4++;
-
-			}
-
-			else if (miarray[i] == 5) {
-
-				cont5++;
-
-			}
-
-			else if (miarray[i] == 6) {
-
-				cont6++;
-
-			}
-
-			else if (miarray[i] == 7) {
-
-				cont7++;
-
-			}
-
-			else if (miarray[i] == 8) {
-
-				cont8++;
-
-			}
-
-			else if (miarray[i] == 9) {
-
-				cont9++;
-
-			}
+			
 		}
 
-		int contadores[] = { cont0, cont1, cont2, cont3, cont4, cont5, cont6, cont7, cont8, cont9 };
-
+	
 		int maximo = contadores[0];
 
 		for (int i = 0; i < contadores.length; i++) {
