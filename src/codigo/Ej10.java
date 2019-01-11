@@ -2,142 +2,83 @@ package codigo;
 
 import static teclado.Teclado.*;
 
-//Pedir al usuario el número de valores. Rellenar el array con numeros del 0 al 9. Contar cuantas ocurrencias de cada numero hay en el array, y buscar el maximo. Hacer una columna con números del 0 al 9. Hacer columnas de espacios en blanco, tantos como indique el maximo. Colocar asteriscos
+import static arrays.Arrays.mostrararray;
 
 public class Ej10 {
 
+	// Pedir los numeros por teclado (deben ser menores o igual a 9), hasta que se
+	// introduzca un número negativo.
+	// Encontrar el máximo numero de ocurrencias de un numero.
+	// Crear tantas filas como numero maximo de ocurrencias haya.
+	// Crear 10 columnas.
+	// Colocar asteriscos.
+
 	public static void main(String[] args) {
 
-		// Pedir longitud del array (debe ser mayor a 0)
-
-		System.out.println("Introduce el número de valores");
-
-		int n = readEqui(0, Equivalencias.MAYOR);
-
-		// Declarar array
-
-		int[] miarray = new int[n];
-
-		// Rellenar array
-
-		rellenararray(miarray);
-
-		// Mostrar array
-
-		mostrararray(miarray);
-
-		System.out.println();
-
-		// Dibujar histograma
-
-		histograma(miarray);
+		histograma(rellenararray());
 
 	}
 
-	// Funcion que rellena el array
+	public static int[] rellenararray() {
 
-	public static void rellenararray(int[] miarray) {
+		int num;
+
+		int[] miarray = new int[10];
+
+		num = readEqui(9, Equivalencias.MENORIGUAL);
+
+		do {
+
+			miarray[num]++;
+
+			num = readEqui(9, Equivalencias.MENORIGUAL);
+
+		} while (num >= 0);
+
+		return miarray;
+	}
+
+	public static int maximoarray(int[] miarray) {
+
+		int maximo = Integer.MIN_VALUE;
 
 		for (int i = 0; i < miarray.length; i++) {
 
-			System.out.println("Introduce el valor nº " + (i + 1));
+			if (miarray[i] > maximo) {
 
-			miarray[i] = readRange(0, 9, Rangos.AMBOSIN);
+				maximo = miarray[i];
 
-		}
-
-	}
-
-	// Funcion que muestra el array
-
-	public static void mostrararray(int[] miarray) {
-
-		for (int i = 0; i < miarray.length; i++) {
-
-			System.out.print(miarray[i] + "   ");
+			}
 
 		}
 
-		System.out.println();
-
+		return maximo;
 	}
-
-	// Función que dibuja el histograma
 
 	public static void histograma(int[] miarray) {
-		
-		int [] contadores = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-		for (int i = 0; i < miarray.length; i++) {
+		for (int i = maximoarray(miarray); i >= 0; i--) {
 
-			switch (miarray[i]) {
-			
-			case 0: contadores[0]++;
-			break;
-			
-			case 1: contadores[1]++;
-			break;
-			
-			case 2: contadores[2]++;
-			break;
-			
-			case 3: contadores[3]++;
-			break;
-			
-			case 4: contadores[4]++;
-			break;
-			
-			case 5: contadores[5]++;
-			break;
-			
-			case 6: contadores[6]++;
-			break;
-			
-			case 7: contadores[7]++;
-			break;
-			
-			case 8: contadores[8]++;
-			break;
-			
-			case 9: contadores[9]++;
-			break;
-			
-			}
+			for (int j = 0; j <= 9; j++) {
 
-			
-		}
+				if (miarray[j] == i && i != 0) {
 
-	
-		int maximo = contadores[0];
+					System.out.print("*   ");
 
-		for (int i = 0; i < contadores.length; i++) {
+					miarray[j]--;
 
-			if (maximo < contadores[i]) {
+				} else if (i != 0) {
 
-				maximo = contadores[i];
+					System.out.print("    ");
+				}
+				if (i == 0) {
+
+					System.out.print(j + "   ");
+				}
 
 			}
-
-		}
-
-		for (int i = 0; i <= 9; i++) {
-
-			System.out.print(i);
-
-			for (int j = 0; j < maximo; j++) {
-
-				if (contadores[i] > 0)
-
-					System.out.print("  *");
-
-				contadores[i]--;
-
-			}
-
 			System.out.println();
-
 		}
-
 	}
 
 }
